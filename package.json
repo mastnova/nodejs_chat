@@ -1,0 +1,28 @@
+{
+  "name": "node_chat",
+  "version": "1.0.0",
+  "description": "my node.js chat",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mastnova/nodejs_chat.git"
+  },
+  "keywords": [
+    "node.js",
+    "chat"
+  ],
+  "author": "mastnova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mastnova/nodejs_chat/issues"
+  },
+  "homepage": "https://github.com/mastnova/nodejs_chat#readme",
+  "dependencies": {
+    "express": "3.5.0",
+    "jade": "^1.11.0",
+    "socket.io": "0.9.17"
+  }
+}
