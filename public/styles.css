@@ -57,11 +57,11 @@ body {
 	display: inline-block;
 }
 
-#enter-wrapper {
+#form-enter {
 	display: block;
 }
 
-#send-wrapper {
+#form-send {
 	display: none;
 }
 
