@@ -21,7 +21,10 @@ serverSocket.sockets.on('connection', function (client) {
 	client.emit('message', 'Welcome to chat!');
 
 	client.on('send', function (data) {
-		serverSocket.sockets.emit('message', data);
+		client.get('nickname', function (err, nickname) {
+			serverSocket.sockets.emit('message', nickname + ': ' + data);
+		})
+
 	});
 
 	client.on('nickname', function (nickname) {
