@@ -47,7 +47,9 @@ serverSocket.sockets.on('connection', function (client) {
 	client.on('disconnect', function () {
 		client.get('nickname', function (err, nickname) {
 			let index = users.indexOf(nickname);
-			users.splice(index, 1);
+			if (index > -1) {
+				users.splice(index, 1);
+			}
 		});
 		serverSocket.sockets.emit('users', users);
 	});
