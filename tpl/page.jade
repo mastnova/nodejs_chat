@@ -1,10 +1,16 @@
 html
 	head
 		title= "Node chat"
+		link(href='/styles.css' rel='stylesheet')
 		script(src='/socket.io/socket.io.js')
 		script(src='/chat.js')
 	body
-		#content(style="width: 500px; height: 300px; margin: 0 0 20px 0; border: solid 1px #999; overflow-y: scroll;")
-		form#form(action='', onsubmit='return false')
-			input#field(style="width:350px;")
-			input#send(type='submit', value='Послать')
+		.wrapper
+			#content
+			#users
+			#enter-wrapper
+				input#name(type='text' placeholder='Ваш никнейм')
+				input#btn-enter.button(type='button', value='Войти')
+			#send-wrapper
+				input#field(type='text' style="width:350px;")
+				input#btn-send.button(type='button', value='Отправить')

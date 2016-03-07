@@ -11,15 +11,38 @@ server.set('view engine', 'jade');
 server.engine('jade', require('jade').__express);
 server.use(express.static('public'));
 
-server.get('/', function(req, res) {
+let users = [];
+
+server.get('/', function (req, res) {
 	res.render('page');
 })
 
-serverSocket.sockets.on('connection', function(client) {
-	console.log('client connected');
+serverSocket.sockets.on('connection', function (client) {
 	client.emit('message', 'Welcome to chat!');
-	client.on('send', function(data) {
-		console.log('send='+data);
+
+	client.on('send', function (data) {
 		serverSocket.sockets.emit('message', data);
-	})
+	});
+
+	client.on('nickname', function (nickname) {
+		if (users.indexOf(nickname) > -1) {
+			client.emit('nickname', 0);
+		} else {
+			users.push(nickname);
+			client.set('nickname', nickname);
+			serverSocket.sockets.emit('users', users);
+			client.emit('nickname', nickname);
+		}
+	});
+
+	client.on('disconnect', function () {
+		client.get('nickname', function (err, nickname) {
+			let index = users.indexOf(nickname);
+			users.splice(index, 1);
+		});
+		serverSocket.sockets.emit('users', users);
+	});
 })
+
+
+
