@@ -15,7 +15,9 @@ window.onload = function () {
 	});
 
 	connection.on('users', function (data) {
-		users = data;
+		users = data.map(function (name) {
+			return '<span>' + name + '</span>';
+		});
 		document.getElementById('users').innerHTML = users.join('<br>');
 	});
 

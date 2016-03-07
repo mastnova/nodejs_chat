@@ -8,9 +8,9 @@ html
 		.wrapper
 			#content
 			#users
-			#enter-wrapper
+			form#enter-wrapper(onsubmit='return false')
 				input#name(type='text' placeholder='Ваш никнейм')
-				input#btn-enter.button(type='button', value='Войти')
-			#send-wrapper
-				input#field(type='text' style="width:350px;")
-				input#btn-send.button(type='button', value='Отправить')
+				input#btn-enter.button(type='submit', value='Войти')
+			form#send-wrapper(onsubmit='return false')
+				input#field(type='text')
+				input#btn-send.button(type='submit', value='Отправить')

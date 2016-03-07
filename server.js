@@ -24,7 +24,7 @@ serverSocket.sockets.on('connection', function (client) {
 
 	client.on('send', function (data) {
 		client.get('nickname', function (err, nickname) {
-			let message = nickname + ': ' + data;
+			let message = '<span>' + nickname + ':</span> ' + data;
 			if (messages.length == msgLimit) {
 				messages.shift();
 			}

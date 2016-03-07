@@ -1,10 +1,11 @@
 body {
 	background: #203F5C;
+	font-family: Arial, sans-serif;
 }
 
 .wrapper {
-	width: 960px;
-	margin: 0 auto;
+	width: 710px;
+	margin: 30px auto 0;
 }
 
 #content {
@@ -13,15 +14,47 @@ body {
 	width: 500px;
 	height: 300px;
 	background-color: #4E5E6C;
+	color: #DFEFFF;
+	font-size: 16px;
+	padding: 10px 20px;
+	box-sizing: border-box;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+#content span {
+	color: #fff;
+	font-size: 17px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	max-width: 110px;
+	display: inline-block;
+	line-height: 13px;
 }
 
 #users {
 	display: inline-block;
 	vertical-align: top;
 	background-color: #4E5E6C;
-	border: 2px solid black;
-	width: 300px;
+	border-left: 2px solid #203F5C;
+	width: 200px;
 	height: 300px;
+	font-size: 18px;
+	font-family: Arial;
+	padding: 10px;;
+	color: #fff;
+	box-sizing: border-box;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+#users span {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	width: 190px;
+	display: inline-block;
 }
 
 #enter-wrapper {
@@ -30,4 +63,31 @@ body {
 
 #send-wrapper {
 	display: none;
+}
+
+input {
+	width: 578px;
+	height: 30px;
+	box-sizing: border-box;
+	padding: 5px 10px;
+	font-size: 13px;
+	outline: none;
+	margin-top: 2px;
+	border: none;
+}
+
+.button {
+	height: 30px;
+	background: #4185B8;
+	width: 120px;
+	box-sizing: border-box;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	margin-left: 2px;
+	vertical-align: top;
 }
