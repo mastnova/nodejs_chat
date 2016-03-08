@@ -30,7 +30,16 @@ body {
 	overflow: hidden;
 	max-width: 110px;
 	display: inline-block;
-	line-height: 13px;
+	vertical-align: middle;
+	height: 22px;
+}
+
+#content a {
+	color: #62BCFF;
+}
+
+#content a:hover {
+	text-decoration: none;
 }
 
 #users {
